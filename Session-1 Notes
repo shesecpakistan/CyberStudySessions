@@ -1,0 +1,84 @@
+### Certifications & Course Guidance
+
+- **Certified in Cybersecurity (CC)**: Previously free, now $199; courses may still be free and worth doing
+- **CEH (Certified Ethical Hacker)**: Theoretical certification, expensive at $1,000; only worth pursuing if offered free through government programs
+- **OSCP**: Highly practical exam requiring 24-hour machine hacking; expensive at $1,600 but excellent for skill development
+- **INE Certifications (EJPT, EPPT, EWPT)**: SheSec Pakistan previously partnered with INE to offer $1,400 worth of courses for $350
+- Certifications should be viewed as learning tools, not just CV decorations; practical skills matter more than certificate collection
+
+### Learning Resources & Platforms
+
+- **TryHackMe**: Highly recommended for learning internal pen testing, Windows/Linux machines, Active Directory; provides step-by-step guidance
+- **PortSwigger Academy**: Free platform with labs covering all web vulnerability types (CSRF, XSS, CORS, SSRF); essential for learning Burp Suite and web pen testing
+- **Root.me**: Good starting point for basic labs and beginner-friendly practice
+- **IppSec YouTube Channel**: Recommended for learning through Hack the Box walkthroughs; copy videos first to understand methodology
+- **Hack the Box**: Advanced platform; watch walkthroughs before attempting independently
+
+### Vulnerability Disclosure Programs (VDPs)
+
+- VDPs are alternative to bug bounty programs that provide real-world experience without monetary rewards
+- Example: Sony VDP on HackerOne allows practice on all Sony websites with Hall of Fame recognition
+- VDP recognition and certifications can be added to CV as independent research experience
+- Better option for beginners than bug bounty due to less competition
+- Bug bounty programs not recommended for beginners due to AI-related challenges and high competition
+- Intel and other companies offer VDP certifications
+
+### Essential Technical Skills
+
+- **Linux**: Critical foundation; recommend installing Ubuntu/Debian or Kali Linux as primary OS to accelerate learning
+- **Networking**: Essential fundamental skill that must be self-taught
+- **Programming**: Can be learned in university; not mandatory initially (basic Python, HTML, PHP sufficient); AI can assist with tool development
+- **Bash Scripting**: Important for Linux automation and tool development
+- **Web Pen Testing**: Comprises 60% of penetration testing work
+- Learning progression: Web and mobile → API → internal (host, Active Directory) → cloud → application security reviews
+
+### Career Domains & Paths
+
+- **Red Team**: Offensive security, attacker perspective; requires networking and Linux knowledge; programming helpful but not mandatory
+- **Blue Team**: Defensive security including firewalls, SOC, incident response
+- **Purple Team**: Combination of offensive and defensive; runs scanners and combines both approaches
+- **GRC (Governance, Risk, Compliance)**: More document-focused; often pays more than red team
+- **Digital Forensics**: Separate field with openings in cybercrime and police departments; can be pursued as career or hobby
+- **Cyber Law**: Also part of cybersecurity domain
+- Easier to transition from red team to blue team than vice versa; purple team accessible from both sides
+
+### University Education & Practical Skills Balance
+
+- University degrees are important and should not be abandoned, even with freelancing income
+- Universities teach communication, presentation, and grooming, but technical skills require self-study
+- Cannot rely solely on university degree for technical competence
+- Build certifications, VDP experience, CTF participation, and projects while in university to compete in job market
+
+### AI's Impact on Cybersecurity
+
+- AI causing significant changes in red teaming and cybersecurity
+- Must stay updated with AI developments alongside traditional security news (CVEs, exploits)
+- Free AI tools available: Codex (by OpenAI), Gemini; critical to learn and use
+- AI enabling tool development even without strong programming background
+- AI increasing competition in bug bounty hunting, making it less viable for beginners
+
+### Job Hunting & Career Development
+
+- Current job market very competitive due to layoffs and economic conditions
+- **LinkedIn Strategy**: Search for cybersecurity jobs and message HR directly with CV to bypass automated rejection systems
+- Build strong portfolio with certifications, VDP experience, CTF participation, and practical projects
+- Cybersecurity offers global opportunities - can work anywhere (Singapore, Europe, Gulf)
+- Real-world targets often easier than CTFs because many systems use outdated technology
+
+### Additional Topics Discussed
+
+- **CTFs (Capture The Flag)**: Harder than real-world pen testing but good for learning; teach broad skills but not mastery
+- **OSINT and Forensics**: Popular CTF categories; reconnaissance and enumeration are critical skills
+- **Burp Suite**: Essential tool for web pen testing
+- **Flipper Zero**: Physical security assessment device for cloning key passes; used in social engineering; must be shipped from US
+- **Wi-Fi Pineapple**: Device for creating rogue access points
+- Practice should balance challenge with AI assistance when needed; copy expert videos initially to learn methodology
+
+### Community Impact & Initiatives
+
+- SheSec Pakistan features senior women through "Women's Wednesday" series on Instagram to showcase role models
+- Similar to "Code Girls" community for programming
+- Community received initial backlash about separate women's space but has proven valuable for networking and comfort
+- Members encouraged to represent SheSec Pakistan at conferences, CTFs, and hackathons
+- Platform designed for collaboration and mutual support, not just one person's expertise
+- All members encouraged to share resources and help each other
