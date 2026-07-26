@@ -1,0 +1,93 @@
+### Why Linux for Pen Testing
+
+- Linux allows direct interaction with the computer without permission restrictions
+- Many security tools will not run on Windows due to antivirus/Defender or corporate laptop restrictions
+- Linux supports bash scripting, Python, and other languages more easily than Windows
+- Most global network infrastructure runs on Linux backends, making it essential knowledge
+- Recommended distros: Kali Linux, Ubuntu, Debian
+
+### Linux File System Basics
+
+- Key directories: `/home` (user files), `/root` (root user), `/etc` (system/config files), `/var` (web server files e.g. Apache), `/tmp` (temporary files)
+- Root user has unrestricted access including kernel-level access; not recommended as a daily-driver user
+- Normal user accounts recommended for daily use (Ubuntu, Debian, Linux Mint)
+
+### Essential Linux Commands
+
+- `pwd` — show current directory
+- `ls -la` — list directory contents in detail
+- `cd` — change directory
+- `cat` — read a file
+- `mkdir` — create a folder
+- `touch` — create a file with any extension (supports double extensions like `.php.asp`, useful for testing file upload vulnerabilities)
+- `cp`, `mv`, `rm` — copy, move, delete files
+- `grep` — search for a word within a file
+- `find` — locate files
+- `ps aux` — view running processes
+- `kill` — terminate a process by PID
+- `whoami` / `id` — identify current user and permission level
+- `su` — switch user (also short for superuser)
+- `apt install` / `apt update` — package management for Ubuntu/Debian/Kali
+
+### File Permissions in Linux
+
+- Root-owned files are inaccessible to other users by default
+- `chown` — change file ownership
+- `chmod 755` or `chmod +x` — make a file executable
+- Understanding permissions is critical for pen testing
+
+### Bash Scripting for Automation
+
+- Bash scripting recommended for automating recon tasks (running multiple tools, loops) without needing Python
+- For advanced tooling, Python or Golang is required
+
+### Passive Recon
+
+- Passive recon gathers information from external sources without directly targeting the system; also called OSINT (Open Source Intelligence)
+- Advantage: does not generate requests on the target and avoids triggering firewalls or logs
+- **Google Dorking** — uses Google search operators to find indexed pages, files, subdomains, exposed directories
+    - `inurl:` — find URLs containing a specific word
+    - `site:` — limit results to a specific domain
+    - `ext:` — filter by file extension (PHP, ASP, PDF, etc.)
+    - `index of` — find sites with directory listing enabled
+    - Google Hacking Database (GHDB) maintains a large list of useful dorks
+- **Shodan** — search engine for Internet of Things devices (CCTV cameras, printers, switches, SSH/FTP servers, etc.); not just websites
+- **ZoomEye** — Chinese alternative to Shodan; can surface SSH/FTP servers and vulnerabilities directly
+- **cert.sh** — search SSL/TLS certificates to discover organization names, acquisitions, and related products
+- **Wayback Machine (archive.org)** — view historical snapshots of websites; can reveal old/decommissioned pages that may still be live
+- **Whois / Public DNS records** — retrieve organization info and DNS data passively
+
+### Active Recon
+
+- Active recon directly targets the system; generates logs and may trigger firewalls — **only perform on authorized targets or bug bounty programs**
+- **Subdomain Enumeration**
+    - `subfinder` — fast, passive subdomain discovery using sources like cert.sh and Google
+    - `assetfinder` — discovers subdomains from links and Wayback data
+    - `amass` — deep, active brute-force enumeration; slow but thorough; run last
+    - `httpx` — probes subdomains to confirm which are alive/resolved, saving time on dead domains
+- **Content & Directory Discovery**
+    - Tools: `dirsearch` (Python), `gobuster` (Golang), `ffuf`
+    - Use wordlists (e.g. SecLists on GitHub) tailored to the target CMS or server type
+    - Commonly returns 403 Forbidden for sensitive files, but still identifies what exists
+- **Tech Fingerprinting**
+    - **Wappalyzer** browser extension — detects frameworks, CMS, JavaScript libraries in real-time
+    - **wafw00f** — CLI tool that detects web application firewalls (Cloudflare, Akamai, Imperva, etc.) and underlying technology
+- **Port Scanning with Nmap**
+    - Industry-standard tool used by virtually all pen testers
+    - Can detect open ports, running services, and OS versions
+    - Supports rate limiting options to avoid firewall blocks
+    - Nmap Scripting Engine (NSE) supports vulnerability scanning (CVEs, Heartbleed, Poodle, SMB vulns, MySQL, MongoDB, telnet, SSH, SSL)
+    - Recommended for finding non-standard web ports that tools like ZoomEye may not cover
+
+### Recon Workflow Summary
+
+1. **Subdomain enumeration** — discover all subdomains 
+2. **Probe alive** — filter to only live/resolved targets using httpx 
+3. **Fingerprint** — identify tech stack, CMS, frameworks, and firewalls 
+4. **Content discovery** — directory brute-forcing and port scanning for services 
+5. **Begin actual testing** once recon data is collected 
+
+### Ethics Reminder
+
+- Always perform active recon only on authorized targets, bug bounty programs, or systems you have explicit permission to test
+- Hacking is a tool for defense and societal good — acting responsibly is essential for a career in cybersecurity
