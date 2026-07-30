@@ -1,0 +1,113 @@
+# Secure Adoption of Generative AI in Enterprises — A GRC Perspective
+
+> Session notes. Focus: governance, risk, and compliance considerations for enterprise/SMB GenAI adoption.
+
+## The Framing
+
+- AI adoption is **already happening** — most employees already use ChatGPT, Gemini, Copilot, Claude in their daily routine
+- The question is no longer *"Should our organization use AI?"* — it's *"How do we make sure people use it securely?"*
+- GRC is often assumed to be only policies, procedures, and documentation — but it starts before that, with understanding actual usage and risk
+- Core goal: **enable innovation while keeping risk within an acceptable level**
+
+### Business Value (Why Organizations Want AI)
+
+- Saves significant time on repetitive knowledge work
+- Developers: troubleshoot, draft, and debug code
+- Analysts: summarize lengthy reports
+- HR: draft communications
+- Security: assist alert investigation, automated SOC, automated pen testing
+- **Key tension:** productivity moves faster than governance — an employee discovers a tool and starts using it before security is aware
+
+## Risks Hidden in Everyday AI Use
+
+- **Data leakage** — e.g. an employee pastes a confidential 30–40 page document into an unapproved public tool for a quick summary. Productivity shortcut for them; data exposure event for security. Most AI incidents start with a *well-intentioned* employee, not a malicious one.
+- **Hallucination** — AI can produce information that sounds convincing but is incorrect
+- **Shadow AI / ungoverned adoption** — employees adopt tools without going through IT security or procurement, so unvetted tools end up processing company or customer data
+- If no tool has been properly assessed, you have a **governance problem before you have a technical problem**
+
+## Enterprise AI Threat Landscape (Attackers Using AI)
+
+- The threat surface is broader than data leakage alone:
+    - **Prompt injection** — manipulating the instructions given to an AI system so it behaves in unintended ways
+    - **Jailbreaking** — bypassing built-in safeguards
+    - **AI supply chain risk** — using an external provider means trusting them with part of your data
+- Supply chain raises familiar questions: who has access, how is data stored, how long is it retained, is it used to train models, where is it processed
+- **Takeaway:** AI introduces new risks, but this is still a GRC conversation — third-party risk, data protection, access control, risk assessment, contractual security clauses, and monitoring. Many governance principles you already know still apply.
+
+## Governance Framework (Heart of Secure Adoption)
+
+- First mistake: *"AI is risky, let's block it."* Employees will still use it via personal accounts, public tools, or browser extensions security can't see.
+- **Goal: make secure AI usage easier than insecure AI usage**
+- **Clear ownership** — no single team owns AI. It spans security, privacy, compliance, legal, HR, procurement, and the business. Establish shared accountability.
+- **Acceptable Use Policy (AUP)** — employees must know what they can and cannot do with AI
+- Move from a **blanket approach to a risk-based approach**
+
+### Risk Classification of Use Cases
+
+- Not every use carries the same risk. Compare:
+    - Rewording an internal email → **low risk**
+    - AI helping decide whether a customer receives a loan (with customer data) → **high risk**
+- **Low-risk** use cases → minimal controls
+- **High-risk** use cases → stronger controls: human approval, additional testing, privacy reviews, formal risk acceptance from the business
+- This is the same classification GRC already does for systems, vendors, and business processes — now applied to AI
+
+## Technical Security Controls
+
+- AI security does **not** mean reinventing cybersecurity — existing fundamentals still apply
+- Strong **IAM**, **MFA**, **role-based access control**, **encryption**
+- **DLP** to prevent sensitive information being submitted to unauthorized AI services
+- Treat external AI providers as **critical third parties**:
+    - Review certifications and security practices
+    - Understand data handling, retention, and processing location
+    - Check incident response and contractual commitments
+- From a GRC view, a control isn't enough on its own — you must be able to **demonstrate it exists, prove it operates effectively, and provide evidence**
+
+## Compliance & Frameworks
+
+- You do **not** need an entirely separate compliance program just because you use AI
+- **ISO 27001** — foundation: information security, risk management, access control, supplier relationships, secure development, information classification
+- **NIST frameworks** — cybersecurity and AI governance
+- **ISO 42001** — specifically for AI management systems
+- Don't collect frameworks for the sake of compliance. Ask: *which risks are we managing, and which controls address them?* **Compliance should support security.**
+
+## AI Risk Assessment (Practical Example)
+
+- Scenario: an employee uses a public AI tool with confidential company data (HR database, customer information)
+- **Impact:** potentially high — confidential data could be exposed
+- **Likelihood:** potentially high, depending on the organization
+- Result: a high-risk scenario → introduce an approved AI service and controls around it
+- The familiar GRC cycle applied to AI:
+    - **Identify → Assess → Determine treatment → Assign ownership → Monitor effectiveness**
+
+## Human Element & Real-World Lessons
+
+- Technology alone won't solve this — if employees don't understand *why* controls exist, they'll work around them
+- Awareness must explain the **why**, not just *"don't paste confidential data into ChatGPT"*
+- Employees should understand:
+    - What constitutes sensitive information
+    - Which AI tools are approved
+    - What they can use AI for
+    - When human review is required
+- AI also makes attacks more effective: more convincing phishing, more personalized social engineering, automated content generation
+- **Two sides of the same technology:** employees become more productive; attackers become more effective → requires a **balanced approach**
+
+## A Practical AI Security Program — 4 Pillars
+
+- **Governance** — AI policy, defined responsibilities and ownership, approval process, maintained AI inventory
+- **Technology** — access controls, DLP, logging, monitoring, secure configurations
+- **People** — train employees on what is safe to share and what isn't
+- **Continuous monitoring** — AI governance is not a one-time exercise; new tools, use cases, and threats emerge constantly, so controls and policies must evolve
+
+## Where to Start — 5 Steps
+
+1. **Discover** — inventory the AI tools and use cases already in the organization
+2. **Assess** — understand the risks tied to those tools and use cases
+3. **Govern** — establish policies, ownership, acceptable-use requirements, and approval processes
+4. **Secure** — implement the technical and administrative controls needed to manage those risks
+5. **Monitor** — continuously review usage, incidents, emerging risks, and regulatory expectations
+
+- This doesn't require becoming an AI expert overnight — it's the familiar GRC lifecycle (**identify → assess → treat → monitor → improve**) applied to a new technology
+
+## Closing Thought
+
+- A few years ago organizations debated *"should we move to the cloud?"* — the same adoption-then-governance pattern now applies to generative AI
